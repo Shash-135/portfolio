@@ -8,8 +8,9 @@
 
 body {
   line-height: 1.6;
-  background: #f4f4f4;
+  background: #fdfdfd;
   color: #333;
+  overflow-x: hidden;
 }
 
 a {
@@ -35,6 +36,7 @@ nav {
 .logo {
   color: #fff;
   font-size: 1.3rem;
+  animation: fadeInDown 1s ease;
 }
 
 .nav-links {
@@ -55,33 +57,49 @@ nav {
 /* Hero Section */
 .hero {
   height: 90vh;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-              url('https://picsum.photos/1200/800') center/cover no-repeat;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 40px;
+  background: linear-gradient(120deg, #00adb5 0%, #007f85 100%);
   color: #fff;
   text-align: center;
-  padding: 0 20px;
+}
+
+.hero-text {
+  max-width: 500px;
+  animation: fadeInLeft 1.5s ease;
 }
 
 .hero h2 span {
-  color: #00adb5;
+  color: #ffe400;
 }
 
 .hero button {
   margin-top: 20px;
   padding: 10px 20px;
   border: none;
-  background: #00adb5;
-  color: #fff;
+  background: #fff;
+  color: #007f85;
+  font-weight: bold;
   cursor: pointer;
   border-radius: 5px;
   transition: 0.3s;
 }
 
 .hero button:hover {
-  background: #007f85;
+  background: #ffe400;
+  color: #000;
+}
+
+.hero-img img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #fff;
+  animation: bounceIn 2s ease;
 }
 
 /* Sections */
@@ -94,6 +112,7 @@ h2 {
   margin-bottom: 20px;
   font-size: 2rem;
   color: #222;
+  animation: fadeInUp 1s ease;
 }
 
 /* About Section */
@@ -101,6 +120,7 @@ h2 {
   max-width: 600px;
   margin: auto;
   font-size: 1.1rem;
+  animation: fadeIn 1.5s ease;
 }
 
 .skills {
@@ -118,6 +138,7 @@ h2 {
   padding: 8px 15px;
   border-radius: 20px;
   font-size: 0.9rem;
+  animation: zoomIn 1.2s ease;
 }
 
 /* Projects */
@@ -131,13 +152,20 @@ h2 {
   background: #fff;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(0) scale(1.05);
 }
 
 .project-card a {
   display: inline-block;
   margin-top: 10px;
   color: #00adb5;
+  font-weight: bold;
 }
 
 /* Contact */
@@ -147,6 +175,7 @@ form {
   gap: 15px;
   max-width: 400px;
   margin: auto;
+  animation: fadeInUp 1.5s ease;
 }
 
 form input, form textarea, form button {
@@ -172,4 +201,36 @@ footer {
   color: #fff;
   padding: 10px;
   text-align: center;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  60% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
 }
