@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shashank Talekar - Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shashank Talekar | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- ===== HEADER ===== -->
+
+  <!-- Navbar -->
   <header>
-    <nav>
-      <h1 class="logo">Shashank Talekar</h1>
+    <nav class="navbar">
+      <div class="logo">Shashank</div>
       <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -19,74 +21,55 @@
     </nav>
   </header>
 
-  <!-- ===== HERO SECTION ===== -->
-  <section class="hero">
+  <!-- Hero Section -->
+  <section id="hero">
     <div class="hero-text">
-      <h2>Hello, I'm <span>Shashank Talekar</span></h2>
-      <p>MCA Student at IMCC College | Passionate Problem Solver</p>
-      <button onclick="scrollToSection('about')">Know More</button>
+      <h1>Hello, I'm</h1>
+      <h2><span id="typewriter"></span></h2>
+      <p>MCA Student at IMCC College | Problem Solver | Python, Java, React, C++, C</p>
     </div>
-    <div class="hero-img">
-      <!-- Replace "myphoto.jpg" with your actual image file -->
+    <div class="hero-photo">
       <img src="imgs/myphoto.png" alt="Shashank Talekar">
     </div>
   </section>
 
-  <!-- ===== ABOUT ===== -->
-  <section id="about" class="about">
+  <!-- About Section -->
+  <section id="about">
     <h2>About Me</h2>
     <p>
-      Hi! I'm <b>Shashank Talekar</b>, an MCA Student at IMCC College with strong
-      problem-solving skills. I enjoy learning new technologies and building
-      projects. My technical expertise includes:
+      I am an MCA Student at IMCC College with strong problem-solving skills.
+      I have hands-on experience with Python, Java, React, C++, and C.
+      My passion lies in building innovative solutions and learning new technologies every day.
     </p>
-    <ul class="skills">
-      <li>Python</li>
-      <li>Java</li>
-      <li>C++</li>
-      <li>C</li>
-      <li>React</li>
-    </ul>
   </section>
 
-  <!-- ===== PROJECTS ===== -->
-  <section id="projects" class="projects">
+  <!-- Projects Section -->
+  <section id="projects">
     <h2>Projects</h2>
     <div class="project-grid">
       <div class="project-card">
         <h3>Bank Management System</h3>
-        <p>A system with Admin and User portals for managing accounts, transactions, and reports.</p>
-        <a href="#" target="_blank">View Project</a>
+        <p>A web-based system with user/admin portals for managing banking operations.</p>
       </div>
       <div class="project-card">
         <h3>Restaurant Management System</h3>
-        <p>Built using PHP, MySQL, HTML, CSS, and JavaScript for managing orders and reports.</p>
-        <a href="#" target="_blank">View Project</a>
-      </div>
-      <div class="project-card">
-        <h3>Personal Portfolio</h3>
-        <p>A responsive portfolio website showcasing my skills, projects, and achievements.</p>
-        <a href="#" target="_blank">View Project</a>
+        <p>Built using PHP, MySQL, HTML, CSS, JS to handle orders, menu, and billing.</p>
       </div>
     </div>
   </section>
 
-  <!-- ===== CONTACT ===== -->
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:shashank@example.com">shashank@example.com</a></p>
+    <p>GitHub: <a href="https://github.com/yourgithub" target="_blank">github.com/yourgithub</a></p>
   </section>
 
-  <!-- ===== FOOTER ===== -->
   <footer>
     <p>© 2025 Shashank Talekar. All Rights Reserved.</p>
   </footer>
 
+  <!-- JavaScript for typewriter -->
   <script src="script.js"></script>
 </body>
 </html>
