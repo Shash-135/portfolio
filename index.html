@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shashank Talekar | Portfolio</title>
+  <meta name="description" content="Portfolio of Shashank Talekar, MCA student skilled in Python, Java, React, C++, and C. Problem solver and passionate about technology.">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="imgs/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
@@ -12,7 +15,14 @@
   <header>
     <nav class="navbar">
       <div class="logo">Shashank</div>
-      <ul class="nav-links">
+
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
         <li><a href="#hero">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -21,55 +31,187 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section id="hero">
-    <div class="hero-text">
-      <h1>Hello, I'm</h1>
-      <h2><span id="typewriter"></span></h2>
-      <p>MCA Student at IMCC College | Problem Solver | Python, Java, React, C++, C</p>
-    </div>
-    <div class="hero-photo">
-      <img src="imgs/myphoto.png" alt="Shashank Talekar">
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I am an MCA Student at IMCC College with strong problem-solving skills.
-      I have hands-on experience with Python, Java, React, C++, and C.
-      My passion lies in building innovative solutions and learning new technologies every day.
-    </p>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <h3>Bank Management System</h3>
-        <p>A web-based system with user/admin portals for managing banking operations.</p>
+  <main>
+    <!-- Hero Section -->
+    <section id="hero">
+      <div class="hero-text">
+        <h1>Hello, I'm</h1>
+        <h2><span id="typewriter"></span></h2>
+        <p>MCA Student at IMCC College | Problem Solver | Python, Java, React, C++, C</p>
+        <a href="#projects" class="btn">View My Work</a>
       </div>
-      <div class="project-card">
-        <h3>Restaurant Management System</h3>
-        <p>Built using PHP, MySQL, HTML, CSS, JS to handle orders, menu, and billing.</p>
+      <div class="hero-photo">
+        <img src="imgs/myphoto.png" alt="Shashank Talekar" loading="eager">
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <h2><i class="fas fa-user"></i> About Me</h2>
+      <p>
+        I am an MCA Student at IMCC College with strong problem-solving skills.
+        I have hands-on experience with Python, Java, React, C++, and C.
+        My passion lies in building innovative solutions and learning new technologies every day.
+      </p>
+
+      <!-- Education -->
+      <div class="sub-section">
+        <h3>🎓 Education</h3>
+        <div class="card-grid">
+          <div class="info-card">
+            <i class="fas fa-school fa-2x"></i>
+            <h4>SSC</h4>
+            <p>Little Flower English School, Patoda</p>
+            <p><strong>88%</strong></p>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-university fa-2x"></i>
+            <h4>HSC</h4>
+            <p>Vasantdada Patil Mahavidyalaya, Patoda</p>
+            <p><strong>91%</strong></p>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-graduation-cap fa-2x"></i>
+            <h4>BCA</h4>
+            <p>New Arts, Commerce & Science College, Ahmednagar</p>
+            <p><strong>CGPA: 9.09</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="sub-section">
+        <h3>📜 Certifications</h3>
+        <div class="card-grid">
+          <div class="info-card">
+            <i class="fas fa-certificate fa-2x"></i>
+            <h4>Problem Solving</h4>
+            <p>HackerRank</p>
+            <a href="https://www.hackerrank.com/certificates/686f4729ae7b" target="_blank" class="btn small">View Certificate</a>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-certificate fa-2x"></i>
+            <h4>Python (Basic)</h4>
+            <p>HackerRank</p>
+            <a href="https://www.hackerrank.com/certificates/348ad3fc5943" target="_blank" class="btn small">View Certificate</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+<section id="skills">
+  <h2>💻 Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <i class="fab fa-python fa-2x"></i>
+      <h4>Python</h4>
+      <div class="skill-bar">
+        <div class="skill-level" style="width: 90%;"></div>
       </div>
     </div>
-  </section>
+    <div class="skill-card">
+      <i class="fab fa-java fa-2x"></i>
+      <h4>Java</h4>
+      <div class="skill-bar">
+        <div class="skill-level" style="width: 85%;"></div>
+      </div>
+    </div>
+    <div class="skill-card">
+      <i class="fab fa-js-square fa-2x"></i>
+      <h4>JavaScript</h4>
+      <div class="skill-bar">
+        <div class="skill-level" style="width: 80%;"></div>
+      </div>
+    </div>
+    <div class="skill-card">
+      <i class="fab fa-react fa-2x"></i>
+      <h4>React</h4>
+      <div class="skill-bar">
+        <div class="skill-level" style="width: 75%;"></div>
+      </div>
+    </div>
+    <div class="skill-card">
+      <i class="fas fa-database fa-2x"></i>
+      <h4>MySQL</h4>
+      <div class="skill-bar">
+        <div class="skill-level" style="width: 70%;"></div>
+      </div>
+    </div>
+    <div class="skill-card">
+      <i class="fas fa-code fa-2x"></i>
+      <h4>C / C++</h4>
+      <div class="skill-bar">
+        <div class="skill-level" style="width: 80%;"></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:shashank@example.com">shashank@example.com</a></p>
-    <p>GitHub: <a href="https://github.com/yourgithub" target="_blank">github.com/yourgithub</a></p>
-  </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2><i class="fas fa-folder-open"></i> Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>Gym-Project</h3>
+          <p>A front-end project built with HTML.</p>
+          <a href="https://github.com/Shash-135/Gym-Project" target="_blank" class="btn">View Code</a>
+        </div>
+        <div class="project-card">
+          <h3>Face Recognition (Python)</h3>
+          <p>Python program for detecting faces using OpenCV (presumably).</p>
+          <a href="https://github.com/Shash-135/Face_recognition-Python" target="_blank" class="btn">View Code</a>
+        </div>
+        <div class="project-card">
+          <h3>Image Resizer</h3>
+          <p>Python tool to resize images programmatically.</p>
+          <a href="https://github.com/Shash-135/Image-Resizer" target="_blank" class="btn">View Code</a>
+        </div>
+        <div class="project-card">
+          <h3>S-TextUtils</h3>
+          <p>JavaScript utility for text manipulation (e.g., uppercase/lowercase transformations).</p>
+          <a href="https://github.com/Shash-135/S-TextUtils" target="_blank" class="btn">View Code</a>
+        </div>
+        <div class="project-card">
+          <h3>Portfolio</h3>
+          <p>This portfolio site built using CSS (your current project).</p>
+          <a href="https://github.com/Shash-135/portfolio" target="_blank" class="btn">View Code</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <!-- Contact Section -->
+<!-- Contact Section -->
+<section id="contact">
+  <h2 class="section-title"><i class="fas fa-envelope"></i> Contact</h2>
+  <div class="contact-row">
+    <div class="contact-card">
+      <i class="fas fa-paper-plane fa-2x"></i>
+      <h4>Email</h4>
+      <p><a href="mailto:shashanktalekar3@gmail.com">shashanktalekar3@gmail.com</a></p>
+    </div>
+    <div class="contact-card">
+      <i class="fab fa-github fa-2x"></i>
+      <h4>GitHub</h4>
+      <p><a href="https://github.com/shash-135" target="_blank">github.com/shash-135</a></p>
+    </div>
+    <div class="contact-card">
+      <i class="fab fa-linkedin fa-2x"></i>
+      <h4>LinkedIn</h4>
+      <p><a href="https://www.linkedin.com/in/shashank-talekar/" target="_blank">linkedin.com/in/Shashank-Talekar</a></p>
+    </div>
+  </div>
+</section>
+
+
 
   <footer>
     <p>© 2025 Shashank Talekar. All Rights Reserved.</p>
   </footer>
 
-  <!-- JavaScript for typewriter -->
+  <!-- JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
