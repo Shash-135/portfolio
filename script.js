@@ -1,5 +1,3 @@
-
-
 // Mobile menu toggle
 const menuToggle = document.getElementById("menu-toggle");
 const navLinks = document.getElementById("nav-links");
@@ -45,7 +43,12 @@ function typeWriter() {
   setTimeout(typeWriter, typing ? 150 : 100);
 }
 
-window.onload = typeWriter;
+window.addEventListener("DOMContentLoaded", () => {
+  const typewriterTarget = document.getElementById("typewriter");
+  if (!typewriterTarget) return;
+
+  typeWriter(typewriterTarget, roles, 150, 100, 1500);
+});
 
 // Animate Contact Section on scroll
 const contactSection = document.getElementById('contact');
