@@ -1,215 +1,332 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shashank Talekar | Portfolio</title>
-  <meta name="description" content="Portfolio of Shashank Talekar, MCA student skilled in Python, Java, React, C++, and C. Problem solver and passionate about technology.">
+  <title>Shashank | Backend Engineer</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="imgs/favicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
+  <!-- Custom Cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
 
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">Shashank</div>
-
-      <div class="menu-toggle" id="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <svg class="nav-logo" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 20C10 14.4772 14.4772 10 20 10C25.5228 10 30 14.4772 30 20C30 25.5228 25.5228 30 20 30"
+            stroke="url(#logo_grad)" stroke-width="4" stroke-linecap="round" />
+          <path d="M10 30V20M30 10V20" stroke="url(#logo_grad)" stroke-width="4" stroke-linecap="round" />
+          <circle cx="20" cy="20" r="4" fill="url(#logo_grad)" />
+          <defs>
+            <linearGradient id="logo_grad" x1="10" y1="10" x2="30" y2="30" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#6366F1" />
+              <stop offset="1" stop-color="#06B6D4" />
+            </linearGradient>
+          </defs>
+        </svg>
+        Shashank
       </div>
+      <div class="nav-menu">
+        <div class="desktop-links">
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button id="mobile-menu-btn" class="theme-btn mobile-only" aria-label="Open Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
 
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- Mobile Menu Dropdown (Moved outside Nav for fixed positioning) -->
+  <div id="mobile-menu" class="mobile-menu">
+    <a href="#projects" class="mobile-link">Projects</a>
+    <a href="#skills" class="mobile-link">Skills</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
 
   <main>
     <!-- Hero Section -->
-    <section id="hero">
-      <div class="hero-text">
-        <h1>Hello, I'm</h1>
-        <h2><span id="typewriter"></span></h2>
-        <p>MCA Student at IMCC College | Problem Solver | Python, Java, React, C++, C</p>
-        <a href="#projects" class="btn">View My Work</a>
-      </div>
-      <div class="hero-photo">
-        <img src="imgs/myphoto.png" alt="Shashank Talekar" loading="eager">
+    <section class="hero-section reveal">
+      <!-- Geometric Network SVG -->
+      <svg class="hero-logo" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="url(#hero_grad)" stroke-width="1.5" stroke-opacity="0.3">
+          <!-- Outer Orbit -->
+          <circle cx="250" cy="250" r="200" stroke-dasharray="4 4" />
+          <circle cx="250" cy="250" r="160" stroke-opacity="0.1" />
+
+          <!-- Nodes and Connections -->
+          <path d="M250 50 L391 108 L391 391 L108 391 L108 108 L250 50 Z" />
+          <path d="M250 150 L320 190 L320 310 L180 310 L180 190 L250 150 Z" />
+          <line x1="250" y1="50" x2="250" y2="150" />
+          <line x1="391" y1="108" x2="320" y2="190" />
+          <line x1="391" y1="391" x2="320" y2="310" />
+          <line x1="108" y1="391" x2="180" y2="310" />
+          <line x1="108" y1="108" x2="180" y2="190" />
+
+          <!-- Central Core -->
+          <circle cx="250" cy="250" r="40" stroke="url(#hero_grad)" stroke-width="3" fill="url(#hero_grad)"
+            fill-opacity="0.1" />
+          <circle cx="250" cy="250" r="10" fill="url(#hero_grad)" />
+        </g>
+        <!-- Floating Particles -->
+        <circle cx="108" cy="108" r="4" fill="#06B6D4">
+          <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="391" cy="391" r="4" fill="#6366F1">
+          <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="250" cy="50" r="4" fill="#06B6D4">
+          <animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite" />
+        </circle>
+
+        <defs>
+          <linearGradient id="hero_grad" x1="0" y1="0" x2="500" y2="500" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#6366F1" />
+            <stop offset="1" stop-color="#06B6D4" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <div class="container hero-content">
+        <div class="badge">Backend Engineer</div>
+        <h1 class="hero-title">Architecting the<br>systems of tomorrow.</h1>
+        <p class="hero-subtitle">
+          I build scalable, reliable, and secure backend infrastructure.
+          Specializing in Python, Django, and System Design.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary"><i class="fas fa-eye"></i> View Projects</a>
+          <a href="https://github.com/shash-135" target="_blank" class="btn btn-secondary"><i class="fab fa-github"></i>
+            GitHub</a>
+        </div>
       </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
-      <h2><i class="fas fa-user"></i> About Me</h2>
-      <p>
-        I am an MCA Student at IMCC College with strong problem-solving skills.
-        I have hands-on experience with Python, Java, React, C++, and C.
-        My passion lies in building innovative solutions and learning new technologies every day.
-      </p>
+    <!-- About & Stats ("The Path") -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="about-grid">
+          <!-- Text Side -->
+          <div class="about-text reveal">
+            <h2 class="section-title"><i class="fas fa-compass"></i> The Path</h2>
+            <p class="body-text">
+              I walk the path of the Backend. Though I began as a wanderer, exploring the lands of Android, AI, and Web,
+              I found my purpose in the deep structures of Logic and Data.
+            </p>
+            <p class="body-text">
+              Like a smith forging a blade, I temper systems to be robust, scalable, and sharp. My current focus is
+              architecting the unseen foundations that hold the digital world together.
+            </p>
+            <button id="about-btn" class="btn"
+              style="margin-top: 20px; border: 1px solid var(--brand); color: var(--brand); background: transparent;">
+              <i class="fas fa-terminal"></i> Initialize Profile
+            </button>
+          </div>
 
-      <!-- Education -->
-      <div class="sub-section">
-        <h3>🎓 Education</h3>
-        <div class="card-grid">
-          <div class="info-card">
-            <i class="fas fa-school fa-2x"></i>
-            <h4>SSC</h4>
-            <p>Little Flower English School, Patoda</p>
-            <p><strong>88%</strong></p>
-          </div>
-          <div class="info-card">
-            <i class="fas fa-university fa-2x"></i>
-            <h4>HSC</h4>
-            <p>Vasantdada Patil Mahavidyalaya, Patoda</p>
-            <p><strong>91%</strong></p>
-          </div>
-          <div class="info-card">
-            <i class="fas fa-graduation-cap fa-2x"></i>
-            <h4>BCA</h4>
-            <p>New Arts, Commerce & Science College, Ahmednagar</p>
-            <p><strong>CGPA: 9.09</strong></p>
+          <!-- Stats Side -->
+          <div class="stats-grid reveal">
+            <a href="https://leetcode.com/u/shashank3010/" target="_blank" class="card stat-card">
+              <div class="stat-icon"><i class="fas fa-code"></i></div>
+              <div class="stat-val">1650</div>
+              <div class="stat-label">LeetCode Rating</div>
+            </a>
+            <a href="https://www.hackerrank.com/profile/shashanktalekar3" target="_blank" class="card stat-card">
+              <div class="stat-icon" style="color: gold;"><i class="fas fa-medal"></i></div>
+              <div class="stat-val">Gold</div>
+              <div class="stat-label">HackerRank Badge</div>
+            </a>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Certifications -->
-      <div class="sub-section">
-        <h3>📜 Certifications</h3>
-        <div class="card-grid">
-          <div class="info-card">
-            <i class="fas fa-certificate fa-2x"></i>
-            <h4>Problem Solving</h4>
-            <p>HackerRank</p>
-            <a href="https://www.hackerrank.com/certificates/686f4729ae7b" target="_blank" class="btn small">View Certificate</a>
+    <!-- Projects (Bento Grid) -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title reveal"><i class="fas fa-layer-group"></i> Selected Work</h2>
+        <div class="bento-grid reveal">
+
+          <!-- Project 1: Large Card -->
+          <div class="card bento-large">
+            <div class="card-pattern pattern-grid"></div> <!-- Grid Pattern -->
+            <div class="card-content">
+              <div class="icon-box"><i class="fas fa-network-wired"></i></div>
+              <h3>Synca</h3>
+              <p>Comprehensive system architecture for real-time collaboration.</p>
+              <div class="tags">
+                <span>Python</span>
+                <span>Django</span>
+                <span>WebSockets</span>
+              </div>
+              <a href="https://github.com/Shash-135/Synca" class="card-link">View Source <i
+                  class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="card-glow"></div>
           </div>
-          <div class="info-card">
-            <i class="fas fa-certificate fa-2x"></i>
-            <h4>Python (Basic)</h4>
-            <p>HackerRank</p>
-            <a href="https://www.hackerrank.com/certificates/348ad3fc5943" target="_blank" class="btn small">View Certificate</a>
+
+          <!-- Project 2: Medium Card -->
+          <div class="card bento-medium">
+            <div class="card-pattern pattern-circle"></div> <!-- Circle Pattern -->
+            <div class="card-content">
+              <div class="icon-box"><i class="fas fa-users"></i></div>
+              <h3>JanSankalp</h3>
+              <p>Community platform for collective action.</p>
+              <div class="tags"><span>Platform</span><span>Social</span></div>
+              <a href="https://github.com/Shash-135/JanSankalp" class="card-link">GitHub <i
+                  class="fas fa-arrow-right"></i></a>
+            </div>
           </div>
+
+          <!-- Project 3: Medium Card (Now Large to balance grid) -->
+          <div class="card bento-large">
+            <div class="card-pattern pattern-wave"></div> <!-- Wave Pattern -->
+            <div class="card-content">
+              <div class="icon-box"><i class="fas fa-eye"></i></div>
+              <h3>Face Reader</h3>
+              <p>AI-driven facial recognition system.</p>
+              <div class="tags"><span>OpenCV</span><span>AI</span></div>
+              <a href="https://github.com/Shash-135/Face_recognition-Python" class="card-link">GitHub <i
+                  class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- Project 4: Medium Card -->
+          <div class="card bento-medium">
+            <div class="card-pattern pattern-grid"></div> <!-- Grid Pattern -->
+            <div class="card-content">
+              <div class="icon-box"><i class="fas fa-dumbbell"></i></div>
+              <h3>Gym Management System</h3>
+              <p>Frontend implementation for a modern fitness center.</p>
+              <a href="https://github.com/Shash-135/Gym-Project" class="card-link">Source</a>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
     <!-- Skills Section -->
-<section id="skills">
-  <h2>💻 Skills</h2>
-  <div class="skills-grid">
-    <div class="skill-card">
-      <i class="fab fa-python fa-2x"></i>
-      <h4>Python</h4>
-      <div class="skill-bar">
-        <div class="skill-level" style="width: 90%;"></div>
-      </div>
-    </div>
-    <div class="skill-card">
-      <i class="fab fa-java fa-2x"></i>
-      <h4>Java</h4>
-      <div class="skill-bar">
-        <div class="skill-level" style="width: 85%;"></div>
-      </div>
-    </div>
-    <div class="skill-card">
-      <i class="fab fa-js-square fa-2x"></i>
-      <h4>JavaScript</h4>
-      <div class="skill-bar">
-        <div class="skill-level" style="width: 80%;"></div>
-      </div>
-    </div>
-    <div class="skill-card">
-      <i class="fab fa-react fa-2x"></i>
-      <h4>React</h4>
-      <div class="skill-bar">
-        <div class="skill-level" style="width: 75%;"></div>
-      </div>
-    </div>
-    <div class="skill-card">
-      <i class="fas fa-database fa-2x"></i>
-      <h4>MySQL</h4>
-      <div class="skill-bar">
-        <div class="skill-level" style="width: 70%;"></div>
-      </div>
-    </div>
-    <div class="skill-card">
-      <i class="fas fa-code fa-2x"></i>
-      <h4>C / C++</h4>
-      <div class="skill-bar">
-        <div class="skill-level" style="width: 80%;"></div>
-      </div>
-    </div>
-  </div>
-</section>
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title reveal"><i class="fas fa-microchip"></i> Technical Expertise</h2>
+        <div class="skills-grid reveal">
 
+          <div class="skill-category">
+            <h3>Languages</h3>
+            <div class="skill-tags">
+              <span class="skill-pill"><i class="fab fa-python"></i> Python (Expert)</span>
+              <span class="skill-pill"><i class="fab fa-java"></i> Java</span>
+              <span class="skill-pill"><i class="fas fa-code"></i> C++ / C</span>
+              <span class="skill-pill"><i class="fas fa-database"></i> SQL (MySQL, Postgres)</span>
+              <span class="skill-pill"><i class="fab fa-php"></i> PHP</span>
+            </div>
+          </div>
 
-    <!-- Projects Section -->
-    <section id="projects">
-      <h2><i class="fas fa-folder-open"></i> Projects</h2>
-      <div class="project-grid">
-        <div class="project-card">
-          <h3>Gym-Project</h3>
-          <p>A front-end project built with HTML.</p>
-          <a href="https://github.com/Shash-135/Gym-Project" target="_blank" class="btn">View Code</a>
-        </div>
-        <div class="project-card">
-          <h3>Face Recognition (Python)</h3>
-          <p>Python program for detecting faces using OpenCV.</p>
-          <a href="https://github.com/Shash-135/Face_recognition-Python" target="_blank" class="btn">View Code</a>
-        </div>
-        <div class="project-card">
-          <h3>Image Resizer</h3>
-          <p>Python tool to resize images programmatically.</p>
-          <a href="https://github.com/Shash-135/Image-Resizer" target="_blank" class="btn">View Code</a>
-        </div>
-        <div class="project-card">
-          <h3>S-TextUtils</h3>
-          <p>JavaScript utility for text manipulation (e.g., uppercase/lowercase transformations).</p>
-          <a href="https://github.com/Shash-135/S-TextUtils" target="_blank" class="btn">View Code</a>
-        </div>
-        <div class="project-card">
-          <h3>Portfolio</h3>
-          <p>This portfolio site.</p>
-          <a href="https://github.com/Shash-135/portfolio" target="_blank" class="btn">View Code</a>
+          <div class="skill-category">
+            <h3>Frameworks & Web</h3>
+            <div class="skill-tags">
+              <span class="skill-pill"><i class="fas fa-server"></i> Django</span>
+              <span class="skill-pill"><i class="fab fa-node-js"></i> Node.js / Express</span>
+              <span class="skill-pill"><i class="fab fa-react"></i> React.js</span>
+              <span class="skill-pill"><i class="fas fa-fire"></i> CodeIgniter</span>
+              <span class="skill-pill"><i class="fas fa-layer-group"></i> .NET / JSP</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3>Tools & Databases</h3>
+            <div class="skill-tags">
+              <span class="skill-pill"><i class="fab fa-git-alt"></i> Git / GitHub</span>
+              <span class="skill-pill"><i class="fas fa-leaf"></i> MongoDB / Neo4j</span>
+              <span class="skill-pill"><i class="fab fa-docker"></i> Docker</span>
+              <span class="skill-pill"><i class="fab fa-figma"></i> Figma</span>
+              <span class="skill-pill"><i class="fas fa-terminal"></i> VS Code</span>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
-      <h2><i class="fas fa-envelope"></i> Contact</h2>
-      <div class="contact-row">
-        <div class="contact-card">
-          <i class="fas fa-paper-plane fa-2x"></i>
-          <h4>Email</h4>
-          <p><a href="mailto:shashanktalekar3@gmail.com">shashanktalekar3@gmail.com</a></p>
+    <section id="contact" class="section footer reveal">
+      <div class="container">
+        <h2 class="footer-title">Let's build something.</h2>
+        <div class="social-links">
+          <a href="mailto:shashanktalekar3@gmail.com" class="social-btn"><i class="fas fa-envelope"></i> Email</a>
+          <a href="https://github.com/shash-135" class="social-btn"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://www.linkedin.com/in/shashank-talekar/" class="social-btn"><i class="fab fa-linkedin"></i>
+            LinkedIn</a>
         </div>
-        <div class="contact-card">
-          <i class="fab fa-github fa-2x"></i>
-          <h4>GitHub</h4>
-          <p><a href="https://github.com/shash-135" target="_blank">github.com/shash-135</a></p>
-        </div>
-        <div class="contact-card">
-          <i class="fab fa-linkedin fa-2x"></i>
-          <h4>LinkedIn</h4>
-          <p><a href="https://www.linkedin.com/in/shashank-talekar/" target="_blank">linkedin.com/in/Shashank-Talekar</a></p>
-        </div>
+        <p class="copyright">&copy; 2025 Shashank Talekar</p>
       </div>
     </section>
 
+  </main>
 
+  <!-- About Me Modal (Hidden by default) -->
+  <div id="about-modal" class="modal-overlay">
+    <div class="modal-card">
+      <button id="close-modal" class="close-btn"><i class="fas fa-times"></i></button>
 
-  <footer>
-    <p>© 2025 Shashank Talekar. All Rights Reserved.</p>
-  </footer>
+      <div class="modal-header">
+        <div class="modal-avatar">
+          <i class="fas fa-user-astronaut"></i>
+        </div>
+        <div class="modal-title">
+          <h2>Shashank Talekar</h2>
+          <p>Backend Engineer • Pune, India 🇮🇳</p>
+        </div>
+      </div>
 
-  <!-- JavaScript -->
+      <div class="modal-body">
+        <div class="modal-section">
+          <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+          <div class="timeline-item">
+            <span class="year">Present</span>
+            <div class="timeline-content">
+              <h4>Master of Computer Applications (MCA)</h4>
+              <p>MES IMCC, Pune</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="year">Completed</span>
+            <div class="timeline-content">
+              <h4>Bachelor of Computer Applications (BCA)</h4>
+              <p>New Arts, Commerce & Science College</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-section">
+          <h3><i class="fas fa-gamepad"></i> Interests</h3>
+          <div class="tags">
+            <span>Cooking 🍳</span>
+            <span>Video Games 🎮</span>
+            <span>Travel ✈️</span>
+          </div>
+        </div>
+
+        <div class="modal-section">
+          <h3><i class="fas fa-crosshairs"></i> Current Objective</h3>
+          <p class="goal-text">Seeking challenging <strong>Backend Roles</strong> to build scalable systems.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
+
 </html>
