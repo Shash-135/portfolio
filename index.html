@@ -1,326 +1,409 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shashank | Backend Engineer</title>
+  <title>Shashank Talekar | Backend Engineer · Horizon Fest</title>
+  <meta name="description"
+    content="Shashank Talekar - Backend Engineer specializing in Python, Django, and scalable system design. MCA student, competitive programmer.">
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
-  <!-- Custom Cursor -->
+<body class="locked-scroll">
+  <!-- Custom Aerodynamic Cursor -->
   <div class="cursor-dot"></div>
-  <div class="cursor-outline"></div>
 
-  <!-- Navigation -->
-  <nav class="navbar">
+  <!-- Start Engine (Intro Overlay) -->
+  <div id="intro-overlay" class="intro-overlay">
+    <div class="intro-content">
+      <!-- RPM Loader -->
+      <div class="rpm-loader-container" id="rpm-loader-container">
+        <div class="rpm-spin ring-1"></div>
+        <div class="rpm-spin ring-2"></div>
+        <div class="rpm-text">REV</div>
+      </div>
+
+      <h1 class="mc-logo neon-flicker">SHASHANK <span style="color:var(--brand-blue)">TALEKAR</span></h1>
+      <p class="mc-subtitle reveal fade-d1">Backend Architect · Pune, IN</p>
+      <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto 40px auto; font-size: 0.9rem; letter-spacing: 1px;"
+        class="reveal fade-d2">
+        Building systems that run at redline — fast, resilient, and engineered to scale.
+      </p>
+      <button id="begin-journey-btn" class="btn btn-glow reveal fade-d3">
+        <span>Start Engine &nbsp;<i class="fas fa-flag-checkered"></i></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Telemetry Navigation (Top) -->
+  <nav class="navbar hidden-nav" id="main-nav">
     <div class="nav-container">
-      <div class="logo">
-        <svg class="nav-logo" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10 20C10 14.4772 14.4772 10 20 10C25.5228 10 30 14.4772 30 20C30 25.5228 25.5228 30 20 30"
-            stroke="url(#logo_grad)" stroke-width="4" stroke-linecap="round" />
-          <path d="M10 30V20M30 10V20" stroke="url(#logo_grad)" stroke-width="4" stroke-linecap="round" />
-          <circle cx="20" cy="20" r="4" fill="url(#logo_grad)" />
-          <defs>
-            <linearGradient id="logo_grad" x1="10" y1="10" x2="30" y2="30" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#6366F1" />
-              <stop offset="1" stop-color="#06B6D4" />
-            </linearGradient>
-          </defs>
-        </svg>
-        Shashank
-      </div>
-      <div class="nav-menu">
-        <div class="desktop-links">
-          <a href="#projects" class="nav-link">Projects</a>
-          <a href="#skills" class="nav-link">Skills</a>
-          <a href="#contact" class="nav-link">Contact</a>
-        </div>
-        <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
-          <i class="fas fa-moon"></i>
-        </button>
-        <button id="mobile-menu-btn" class="theme-btn mobile-only" aria-label="Open Menu">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
+      <a href="#about" class="nav-link"><i class="fas fa-id-card"></i> <span>Driver Profile</span></a>
+      <a href="#projects" class="nav-link"><i class="fas fa-map-marked-alt"></i> <span>Horizon Events</span></a>
+      <a href="#skills" class="nav-link"><i class="fas fa-tools"></i> <span>Tuning Garage</span></a>
+      <a href="#contact" class="nav-link"><i class="fas fa-map-pin"></i> <span>Pit Stop</span></a>
+      <a href="#" id="about-btn" class="nav-link"><i class="fas fa-tachometer-alt"></i> <span>Telemetry</span></a>
+      <a href="#" id="audio-toggle-btn" class="nav-link" style="color:var(--brand-pink);"><i
+          class="fas fa-volume-mute"></i> <span>Audio</span></a>
     </div>
   </nav>
 
-  <!-- Mobile Menu Dropdown (Moved outside Nav for fixed positioning) -->
-  <div id="mobile-menu" class="mobile-menu">
-    <a href="#projects" class="mobile-link">Projects</a>
-    <a href="#skills" class="mobile-link">Skills</a>
-    <a href="#contact" class="mobile-link">Contact</a>
-  </div>
+  <!-- Hidden Audio Element -->
+  <audio id="bg-audio" loop preload="auto">
+    <!-- Placeholder, will ask user for an MP3 link -->
+    <source src="" type="audio/mpeg">
+  </audio>
 
   <main>
-    <!-- Hero Section -->
-    <section class="hero-section reveal">
-      <!-- Geometric Network SVG -->
-      <svg class="hero-logo" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g stroke="url(#hero_grad)" stroke-width="1.5" stroke-opacity="0.3">
-          <!-- Outer Orbit -->
-          <circle cx="250" cy="250" r="200" stroke-dasharray="4 4" />
-          <circle cx="250" cy="250" r="160" stroke-opacity="0.1" />
+    <!-- Grid Start (Hero) -->
+    <section class="section carbon-bg" style="position: relative;">
+      <!-- Speed Particles Canvas -->
+      <canvas id="speed-particles"></canvas>
 
-          <!-- Nodes and Connections -->
-          <path d="M250 50 L391 108 L391 391 L108 391 L108 108 L250 50 Z" />
-          <path d="M250 150 L320 190 L320 310 L180 310 L180 190 L250 150 Z" />
-          <line x1="250" y1="50" x2="250" y2="150" />
-          <line x1="391" y1="108" x2="320" y2="190" />
-          <line x1="391" y1="391" x2="320" y2="310" />
-          <line x1="108" y1="391" x2="180" y2="310" />
-          <line x1="108" y1="108" x2="180" y2="190" />
-
-          <!-- Central Core -->
-          <circle cx="250" cy="250" r="40" stroke="url(#hero_grad)" stroke-width="3" fill="url(#hero_grad)"
-            fill-opacity="0.1" />
-          <circle cx="250" cy="250" r="10" fill="url(#hero_grad)" />
-        </g>
-        <!-- Floating Particles -->
-        <circle cx="108" cy="108" r="4" fill="#06B6D4">
-          <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" />
-        </circle>
-        <circle cx="391" cy="391" r="4" fill="#6366F1">
-          <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite" />
-        </circle>
-        <circle cx="250" cy="50" r="4" fill="#06B6D4">
-          <animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite" />
-        </circle>
-
-        <defs>
-          <linearGradient id="hero_grad" x1="0" y1="0" x2="500" y2="500" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#6366F1" />
-            <stop offset="1" stop-color="#06B6D4" />
-          </linearGradient>
-        </defs>
-      </svg>
       <div class="container hero-content">
-        <div class="badge">Backend Engineer</div>
-        <h1 class="hero-title">Architecting the<br>systems of tomorrow.</h1>
-        <p class="hero-subtitle">
-          I build scalable, reliable, and secure backend infrastructure.
-          Specializing in Python, Django, and System Design.
-        </p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary"><i class="fas fa-eye"></i> View Projects</a>
-          <a href="https://github.com/shash-135" target="_blank" class="btn btn-secondary"><i class="fab fa-github"></i>
-            GitHub</a>
+        <div class="hero-badge reveal fade-d1">
+          <i class="fas fa-circle"
+            style="color:var(--brand-pink); font-size: 0.6rem; animation: pulse 2s infinite;"></i>
+          &nbsp; Available for Backend Roles
+        </div>
+        <h1 class="hero-title reveal fade-d2">
+          Architecting systems <br>
+          <span style="color:var(--brand-pink)">at redline.</span>
+        </h1>
+        <div class="hero-text reveal fade-d3">
+          I'm <strong style="color:#fff">Shashank Talekar</strong>, a Backend Engineer and MCA student based in Pune,
+          India. I specialize in <strong style="color:var(--brand-blue)">Python</strong>, <strong
+            style="color:var(--brand-blue)">Django</strong>, and <strong style="color:var(--brand-blue)">scalable System
+            Design</strong>. I transform complex constraints into smooth, fast infrastructure — building for both
+          performance and reliability.
+        </div>
+        <div class="hero-actions reveal fade-d4">
+          <a href="#projects" class="btn btn-glow"><span>View Routes &nbsp;<i
+                class="fas fa-chevron-right"></i></span></a>
+          <a href="https://github.com/shash-135" target="_blank" class="btn"><span><i class="fab fa-github"></i>&nbsp;
+              GitHub Garage</span></a>
         </div>
       </div>
     </section>
 
-    <!-- About & Stats ("The Path") -->
+    <!-- Driver Profile -->
     <section id="about" class="section">
       <div class="container">
-        <div class="about-grid">
-          <!-- Text Side -->
-          <div class="about-text reveal">
-            <h2 class="section-title"><i class="fas fa-compass"></i> The Path</h2>
-            <p class="body-text">
-              I walk the path of the Backend. Though I began as a wanderer, exploring the lands of Android, AI, and Web,
-              I found my purpose in the deep structures of Logic and Data.
-            </p>
-            <p class="body-text">
-              Like a smith forging a blade, I temper systems to be robust, scalable, and sharp. My current focus is
-              architecting the unseen foundations that hold the digital world together.
-            </p>
-            <button id="about-btn" class="btn"
-              style="margin-top: 20px; border: 1px solid var(--brand); color: var(--brand); background: transparent;">
-              <i class="fas fa-terminal"></i> Initialize Profile
-            </button>
-          </div>
+        <h2 class="section-title reveal">Driver Profile</h2>
 
-          <!-- Stats Side -->
-          <div class="stats-grid reveal">
-            <a href="https://leetcode.com/u/shashank3010/" target="_blank" class="card stat-card">
-              <div class="stat-icon"><i class="fas fa-code"></i></div>
-              <div class="stat-val">1650</div>
-              <div class="stat-label">LeetCode Rating</div>
-            </a>
-            <a href="https://www.hackerrank.com/profile/shashanktalekar3" target="_blank" class="card stat-card">
-              <div class="stat-icon" style="color: gold;"><i class="fas fa-medal"></i></div>
-              <div class="stat-val">Gold</div>
-              <div class="stat-label">HackerRank Badge</div>
-            </a>
+        <div class="driver-card reveal">
+          <p class="hero-text" style="margin-bottom: 20px;">
+            I started my journey in tech through curiosity — experimenting with Android apps and AI systems — before
+            finding my true lane in backend engineering. Today, I focus on designing and building the deep, unseen
+            infrastructure that powers real-world applications.
+          </p>
+          <p class="hero-text">
+            I believe great systems are invisible: they feel effortless to users precisely because the engineering
+            underneath has been done right. I obsess over clean architecture, API performance, and writing code that
+            other engineers actually enjoy maintaining.
+          </p>
+          <div style="display: flex; gap: 30px; margin-top: 30px; flex-wrap: wrap;">
+            <div class="driver-info-pill"><i class="fas fa-map-marker-alt" style="color:var(--brand-pink)"></i>&nbsp;
+              Pune, Maharashtra, India</div>
+            <div class="driver-info-pill"><i class="fas fa-graduation-cap" style="color:var(--brand-blue)"></i>&nbsp;
+              MCA @ MES IMCC (First Year)</div>
+            <div class="driver-info-pill"><i class="fas fa-briefcase" style="color:var(--brand-yellow)"></i>&nbsp;
+              Seeking Backend Roles</div>
+          </div>
+        </div>
+
+        <div class="telemetry-grid reveal">
+          <div class="gauge">
+            <div class="gauge-val">1650</div>
+            <div class="gauge-label">LeetCode Rating</div>
+          </div>
+          <div class="gauge" style="border-bottom: 3px solid var(--brand-pink);">
+            <div class="gauge-val" style="color:var(--brand-yellow);">Gold</div>
+            <div class="gauge-label">HackerRank Badge</div>
+          </div>
+          <div class="gauge" style="border-bottom: 3px solid var(--brand-blue);">
+            <div class="gauge-val" style="color:var(--brand-blue);">4+</div>
+            <div class="gauge-label">Years Building</div>
+          </div>
+          <div class="gauge" style="border-bottom: 3px solid var(--brand-yellow);">
+            <div class="gauge-val" style="color:var(--brand-yellow);">5+</div>
+            <div class="gauge-label">Projects Built</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Projects (Bento Grid) -->
-    <section id="projects" class="section">
+    <!-- Projects (Horizon Events) -->
+    <section id="projects" class="section carbon-bg">
       <div class="container">
-        <h2 class="section-title reveal"><i class="fas fa-layer-group"></i> Selected Work</h2>
-        <div class="bento-grid reveal">
+        <h2 class="section-title reveal">Horizon Events</h2>
+        <p class="section-sub reveal"
+          style="color:var(--text-muted); margin-top: -20px; margin-bottom: 40px; font-style: italic;">Select a route to
+          explore the build logs.</p>
 
-          <!-- Project 1: Large Card -->
-          <div class="card bento-large">
-            <div class="card-pattern pattern-grid"></div> <!-- Grid Pattern -->
-            <div class="card-content">
-              <div class="icon-box"><i class="fas fa-network-wired"></i></div>
+        <div class="achievements-grid reveal">
+          <!-- Event 1: Synca -->
+          <div class="card card-hover-effect stagger-1"
+            style="--card-color: var(--brand-pink); --card-glow: rgba(255,0,127,0.4);">
+            <div class="card-accent" style="background:var(--brand-pink);"></div>
+            <div class="card-header-row">
               <h3>Synca</h3>
-              <p>Comprehensive system architecture for real-time collaboration.</p>
-              <div class="tags">
-                <span>Python</span>
-                <span>Django</span>
-                <span>WebSockets</span>
-              </div>
-              <a href="https://github.com/Shash-135/Synca" class="card-link">View Source <i
-                  class="fas fa-arrow-right"></i></a>
+              <span class="event-badge"><i class="fas fa-flag"></i> Sprint</span>
             </div>
-            <div class="card-glow"></div>
+            <p>A real-time document collaboration system built for speed. Synca allows multiple users to edit documents
+              simultaneously using <strong>WebSocket channels</strong> with conflict resolution handled server-side via
+              Django Channels. Designed for sub-100ms latency in peer-to-peer sync scenarios.</p>
+            <ul class="card-highlights">
+              <li><i class="fas fa-check"></i> WebSocket-powered real-time sync</li>
+              <li><i class="fas fa-check"></i> Django Channels for async capacity</li>
+              <li><i class="fas fa-check"></i> REST API + JWT authentication</li>
+            </ul>
+            <div class="tags">
+              <span>Python</span><span>Django</span><span>WebSockets</span><span>REST API</span>
+            </div>
+            <a href="https://github.com/Shash-135/Synca" class="btn btn-small" target="_blank"><span>View Route &nbsp;<i
+                  class="fas fa-chevron-right"></i></span></a>
           </div>
 
-          <!-- Project 2: Medium Card -->
-          <div class="card bento-medium">
-            <div class="card-pattern pattern-circle"></div> <!-- Circle Pattern -->
-            <div class="card-content">
-              <div class="icon-box"><i class="fas fa-users"></i></div>
+          <!-- Event 2: JanSankalp -->
+          <div class="card card-hover-effect stagger-2"
+            style="--card-color: var(--brand-blue); --card-glow: rgba(0,240,255,0.4);">
+            <div class="card-accent" style="background:var(--brand-blue);"></div>
+            <div class="card-header-row">
               <h3>JanSankalp</h3>
-              <p>Community platform for collective action.</p>
-              <div class="tags"><span>Platform</span><span>Social</span></div>
-              <a href="https://github.com/Shash-135/JanSankalp" class="card-link">GitHub <i
-                  class="fas fa-arrow-right"></i></a>
+              <span class="event-badge" style="color: var(--brand-blue); border-color: var(--brand-blue);"><i
+                  class="fas fa-road"></i> Circuit</span>
             </div>
+            <p>A civic-tech community platform connecting citizens to collective social initiatives. Built with a
+              multi-role user system (Admin, Organizer, Citizen), campaign management, and a real-time notification
+              pipeline. Focused on accessibility and ease-of-use for non-technical audiences.</p>
+            <ul class="card-highlights">
+              <li><i class="fas fa-check"></i> Multi-role RBAC authorization system</li>
+              <li><i class="fas fa-check"></i> Campaign creation & lifecycle management</li>
+              <li><i class="fas fa-check"></i> Notification system & analytics dashboard</li>
+            </ul>
+            <div class="tags"><span>Next.js</span><span>Node.js</span><span>MongoDB</span><span>TypeScript</span></div>
+            <a href="https://github.com/Shash-135/JanSankalp" class="btn btn-small" target="_blank"><span>View Route
+                &nbsp;<i class="fas fa-chevron-right"></i></span></a>
           </div>
 
-          <!-- Project 3: Medium Card (Now Large to balance grid) -->
-          <div class="card bento-large">
-            <div class="card-pattern pattern-wave"></div> <!-- Wave Pattern -->
-            <div class="card-content">
-              <div class="icon-box"><i class="fas fa-eye"></i></div>
+          <!-- Event 3: Face Reader -->
+          <div class="card card-hover-effect stagger-3"
+            style="--card-color: var(--brand-yellow); --card-glow: rgba(255,244,0,0.4);">
+            <div class="card-accent" style="background:var(--brand-yellow);"></div>
+            <div class="card-header-row">
               <h3>Face Reader</h3>
-              <p>AI-driven facial recognition system.</p>
-              <div class="tags"><span>OpenCV</span><span>AI</span></div>
-              <a href="https://github.com/Shash-135/Face_recognition-Python" class="card-link">GitHub <i
-                  class="fas fa-arrow-right"></i></a>
+              <span class="event-badge" style="color: var(--brand-yellow); border-color: var(--brand-yellow);"><i
+                  class="fas fa-bolt"></i> Speed Trap</span>
             </div>
+            <p>A Python-based facial recognition engine built on <strong>OpenCV</strong> and the
+              <strong>face_recognition</strong> library. The system can identify registered individuals from live camera
+              feeds in real-time, making it applicable to attendance automation and access control scenarios.
+            </p>
+            <ul class="card-highlights">
+              <li><i class="fas fa-check"></i> Real-time video stream processing</li>
+              <li><i class="fas fa-check"></i> Face encoding & comparison pipeline</li>
+              <li><i class="fas fa-check"></i> Offline-capable (no cloud API needed)</li>
+            </ul>
+            <div class="tags"><span>Python</span><span>OpenCV</span><span>AI/ML</span><span>NumPy</span></div>
+            <a href="https://github.com/Shash-135/Face_recognition-Python" class="btn btn-small"
+              target="_blank"><span>View Route &nbsp;<i class="fas fa-chevron-right"></i></span></a>
           </div>
 
-          <!-- Project 4: Medium Card -->
-          <div class="card bento-medium">
-            <div class="card-pattern pattern-grid"></div> <!-- Grid Pattern -->
-            <div class="card-content">
-              <div class="icon-box"><i class="fas fa-dumbbell"></i></div>
-              <h3>Gym Management System</h3>
-              <p>Frontend implementation for a modern fitness center.</p>
-              <a href="https://github.com/Shash-135/Gym-Project" class="card-link">Source</a>
+          <!-- Event 4: Gym Manager -->
+          <div class="card card-hover-effect stagger-4" style="--card-color: #888; --card-glow: rgba(136,136,136,0.4);">
+            <div class="card-accent" style="background: #888;"></div>
+            <div class="card-header-row">
+              <h3>Gym Manager</h3>
+              <span class="event-badge"><i class="fas fa-car-side"></i> Drift Zone</span>
             </div>
+            <p>A responsive management interface for fitness centers. Supports member registration, subscription
+              tracking, attendance logs, and reporting. Designed with a focus on usability for gym staff, minimal
+              training required. Clean, component-driven frontend.</p>
+            <ul class="card-highlights">
+              <li><i class="fas fa-check"></i> Member & subscription management</li>
+              <li><i class="fas fa-check"></i> Attendance tracking with daily reports</li>
+              <li><i class="fas fa-check"></i> Role-based staff access controls</li>
+            </ul>
+            <div class="tags"><span>HTML/CSS</span><span>JavaScript</span><span>PHP</span><span>MySQL</span></div>
+            <a href="https://github.com/Shash-135/Gym-Project" class="btn btn-small" target="_blank"><span>View Route
+                &nbsp;<i class="fas fa-chevron-right"></i></span></a>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills (Tuning Garage) -->
     <section id="skills" class="section">
-      <div class="container">
-        <h2 class="section-title reveal"><i class="fas fa-microchip"></i> Technical Expertise</h2>
-        <div class="skills-grid reveal">
+      <div class="container skills-container">
+        <h2 class="section-title reveal">Tuning Garage</h2>
+        <p class="section-sub reveal"
+          style="color: var(--text-muted); margin-top: -20px; margin-bottom: 40px; font-style: italic;">Every component
+          selected for maximum performance.</p>
 
-          <div class="skill-category">
-            <h3>Languages</h3>
-            <div class="skill-tags">
-              <span class="skill-pill"><i class="fab fa-python"></i> Python (Expert)</span>
-              <span class="skill-pill"><i class="fab fa-java"></i> Java</span>
-              <span class="skill-pill"><i class="fas fa-code"></i> C++ / C</span>
-              <span class="skill-pill"><i class="fas fa-database"></i> SQL (MySQL, Postgres)</span>
-              <span class="skill-pill"><i class="fab fa-php"></i> PHP</span>
-            </div>
+        <div class="part-category reveal">
+          <h3>Engine &amp; Transmission <span style="color: var(--text-muted);">(Core Languages)</span></h3>
+          <div class="parts-grid">
+            <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer" class="part-slot stagger-1"
+              style="--skill-level: 95%;"><i class="fab fa-python"></i>
+              <div><strong>Python</strong><small>Primary / Expert</small></div>
+            </a>
+            <a href="https://www.java.com/" target="_blank" rel="noopener noreferrer" class="part-slot stagger-2"
+              style="--skill-level: 85%;"><i class="fab fa-java"></i>
+              <div><strong>Java</strong><small>OOP & DSA</small></div>
+            </a>
+            <a href="https://isocpp.org/" target="_blank" rel="noopener noreferrer" class="part-slot stagger-3"
+              style="--skill-level: 80%;"><i class="fas fa-code"></i>
+              <div><strong>C++</strong><small>Competitive Programming</small></div>
+            </a>
+            <a href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer" class="part-slot stagger-4"
+              style="--skill-level: 90%;"><i class="fas fa-database"></i>
+              <div><strong>SQL</strong><small>MySQL / PostgreSQL</small></div>
+            </a>
+            <a href="https://www.php.net/" target="_blank" rel="noopener noreferrer" class="part-slot stagger-5"
+              style="--skill-level: 75%;"><i class="fab fa-php"></i>
+              <div><strong>PHP</strong><small>Server-Side Scripting</small></div>
+            </a>
           </div>
+        </div>
 
-          <div class="skill-category">
-            <h3>Frameworks & Web</h3>
-            <div class="skill-tags">
-              <span class="skill-pill"><i class="fas fa-server"></i> Django</span>
-              <span class="skill-pill"><i class="fab fa-node-js"></i> Node.js / Express</span>
-              <span class="skill-pill"><i class="fab fa-react"></i> React.js</span>
-              <span class="skill-pill"><i class="fas fa-fire"></i> CodeIgniter</span>
-              <span class="skill-pill"><i class="fas fa-layer-group"></i> .NET / JSP</span>
-            </div>
+        <div class="part-category reveal">
+          <h3>Aero &amp; Suspension <span style="color: var(--text-muted);">(Frameworks &amp; Web)</span></h3>
+          <div class="parts-grid">
+            <a href="https://www.djangoproject.com/" target="_blank" rel="noopener noreferrer"
+              class="part-slot stagger-1" style="--skill-level: 90%;"><i class="fas fa-server"></i>
+              <div><strong>Django</strong><small>REST + Channels</small></div>
+            </a>
+            <a href="https://nodejs.org/" target="_blank" rel="noopener noreferrer" class="part-slot stagger-2"
+              style="--skill-level: 80%;"><i class="fab fa-node-js"></i>
+              <div><strong>Node.js</strong><small>Express / API</small></div>
+            </a>
+            <a href="https://react.dev/" target="_blank" rel="noopener noreferrer" class="part-slot stagger-3"
+              style="--skill-level: 75%;"><i class="fab fa-react"></i>
+              <div><strong>React.js</strong><small>Next.js / Vite</small></div>
+            </a>
+            <a href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener noreferrer"
+              class="part-slot stagger-4" style="--skill-level: 85%;"><i class="fas fa-bolt"></i>
+              <div><strong>FastAPI</strong><small>Async REST</small></div>
+            </a>
           </div>
+        </div>
 
-          <div class="skill-category">
-            <h3>Tools & Databases</h3>
-            <div class="skill-tags">
-              <span class="skill-pill"><i class="fab fa-git-alt"></i> Git / GitHub</span>
-              <span class="skill-pill"><i class="fas fa-leaf"></i> MongoDB / Neo4j</span>
-              <span class="skill-pill"><i class="fab fa-docker"></i> Docker</span>
-              <span class="skill-pill"><i class="fab fa-figma"></i> Figma</span>
-              <span class="skill-pill"><i class="fas fa-terminal"></i> VS Code</span>
-            </div>
+        <div class="part-category reveal">
+          <h3>Tools &amp; ECU <span style="color: var(--text-muted);">(DevOps &amp; Databases)</span></h3>
+          <div class="parts-grid">
+            <a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer" class="part-slot stagger-1"
+              style="--skill-level: 85%;"><i class="fab fa-docker"></i>
+              <div><strong>Docker</strong><small>Containerization</small></div>
+            </a>
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="part-slot stagger-2"
+              style="--skill-level: 90%;"><i class="fab fa-git-alt"></i>
+              <div><strong>Git &amp; GitHub</strong><small>Version Control</small></div>
+            </a>
+            <a href="https://www.mongodb.com/" target="_blank" rel="noopener noreferrer" class="part-slot stagger-3"
+              style="--skill-level: 80%;"><i class="fas fa-leaf"></i>
+              <div><strong>MongoDB</strong><small>NoSQL Database</small></div>
+            </a>
+            <a href="https://firebase.google.com/" target="_blank" rel="noopener noreferrer" class="part-slot stagger-4"
+              style="--skill-level: 70%;"><i class="fas fa-fire"></i>
+              <div><strong>Firebase</strong><small>Real-time DB</small></div>
+            </a>
+            <a href="https://www.linux.org/" target="_blank" rel="noopener noreferrer" class="part-slot stagger-5"
+              style="--skill-level: 85%;"><i class="fas fa-cogs"></i>
+              <div><strong>Linux</strong><small>Server Management</small></div>
+            </a>
           </div>
+        </div>
 
+        <div class="part-category reveal">
+          <h3>Powertrain Data <span style="color: var(--text-muted);">(Competitive Edge)</span></h3>
+          <div class="parts-grid">
+            <a href="https://leetcode.com/" target="_blank" rel="noopener noreferrer" class="part-slot stagger-1"
+              style="--skill-level: 100%;"><i class="fas fa-trophy"></i>
+              <div><strong>LeetCode</strong><small>Rating: 1650+</small></div>
+            </a>
+            <a href="https://www.hackerrank.com/" target="_blank" rel="noopener noreferrer" class="part-slot stagger-2"
+              style="--skill-level: 100%;"><i class="fas fa-star"></i>
+              <div><strong>HackerRank</strong><small>Gold Badge (Python)</small></div>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact (Pit Stop) -->
     <section id="contact" class="section footer reveal">
       <div class="container">
-        <h2 class="footer-title">Let's build something.</h2>
-        <div class="social-links">
-          <a href="mailto:shashanktalekar3@gmail.com" class="social-btn"><i class="fas fa-envelope"></i> Email</a>
-          <a href="https://github.com/shash-135" class="social-btn"><i class="fab fa-github"></i> GitHub</a>
-          <a href="https://www.linkedin.com/in/shashank-talekar/" class="social-btn"><i class="fab fa-linkedin"></i>
-            LinkedIn</a>
+        <h2 class="footer-title">Cross the Finish Line.</h2>
+        <p
+          style="color: var(--text-muted); max-width: 600px; margin: 0 auto 40px; text-align: center; font-style: italic;">
+          Whether you have an open role, a project idea, or just want to talk systems — I'm in the pit lane. Let's build
+          something fast.
+        </p>
+        <div class="social-links reveal">
+          <a href="mailto:shashanktalekar3@gmail.com" class="btn btn-glow"><span><i class="fas fa-envelope"></i>&nbsp;
+              Send a Message</span></a>
+          <a href="https://github.com/shash-135" target="_blank" class="btn"><span><i class="fab fa-github"></i>&nbsp;
+              GitHub</span></a>
+          <a href="https://www.linkedin.com/in/shashank-talekar/" target="_blank" class="btn"><span><i
+                class="fab fa-linkedin"></i>&nbsp; LinkedIn</span></a>
         </div>
-        <p class="copyright">&copy; 2025 Shashank Talekar</p>
+        <p class="copyright" style="color:var(--text-muted); margin-top: 50px;">&copy; 2025 Shashank Talekar &mdash;
+          Pune, India</p>
       </div>
     </section>
-
   </main>
 
-  <!-- About Me Modal (Hidden by default) -->
+  <!-- Telemetry Modal -->
   <div id="about-modal" class="modal-overlay">
     <div class="modal-card">
       <button id="close-modal" class="close-btn"><i class="fas fa-times"></i></button>
 
-      <div class="modal-header">
-        <div class="modal-avatar">
-          <i class="fas fa-user-astronaut"></i>
-        </div>
-        <div class="modal-title">
-          <h2>Shashank Talekar</h2>
-          <p>Backend Engineer • Pune, India 🇮🇳</p>
-        </div>
+      <div class="modal-title">
+        <h2 style="font-family: var(--font-sans); font-weight: 900; font-style: italic;">Telemetry Data</h2>
       </div>
 
       <div class="modal-body">
-        <div class="modal-section">
-          <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+        <!-- Education -->
+        <div class="modal-section" style="margin-bottom: 30px;">
+          <h3 style="color:var(--brand-pink); font-style:italic; margin-bottom: 15px;"><i
+              class="fas fa-graduation-cap"></i> Track Record (Education)</h3>
           <div class="timeline-item">
-            <span class="year">Present</span>
-            <div class="timeline-content">
-              <h4>Master of Computer Applications (MCA)</h4>
-              <p>MES IMCC, Pune</p>
-            </div>
+            <p style="color:#fff;"><strong>2025 – Present</strong> &mdash; Master of Computer Applications (MCA)</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">First Year @ MES Institute of Management & Career
+              Courses, Pune
+            </p>
           </div>
           <div class="timeline-item">
-            <span class="year">Completed</span>
-            <div class="timeline-content">
-              <h4>Bachelor of Computer Applications (BCA)</h4>
-              <p>New Arts, Commerce & Science College</p>
-            </div>
+            <p style="color:#fff;"><strong>2022 – 2025</strong> &mdash; Bachelor of Computer Applications (BCA)</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Completed with exposure to web technologies, C++,
+              Java, and DBMS</p>
           </div>
         </div>
 
-        <div class="modal-section">
-          <h3><i class="fas fa-gamepad"></i> Interests</h3>
-          <div class="tags">
-            <span>Cooking 🍳</span>
-            <span>Video Games 🎮</span>
-            <span>Travel ✈️</span>
-          </div>
+        <!-- Career Goal -->
+        <div class="modal-section" style="margin-bottom: 30px;">
+          <h3 style="color:var(--brand-yellow); font-style:italic; margin-bottom: 15px;"><i
+              class="fas fa-crosshairs"></i> Next Route (Career Goal)</h3>
+          <p style="color:#fff;">Seeking challenging <strong>Backend / Full-Stack Engineer roles</strong> where I can
+            work on high-scale distributed systems, API design, and database performance. Open to both full-time and
+            internship opportunities.</p>
         </div>
 
+        <!-- Interests -->
         <div class="modal-section">
-          <h3><i class="fas fa-crosshairs"></i> Current Objective</h3>
-          <p class="goal-text">Seeking challenging <strong>Backend Roles</strong> to build scalable systems.</p>
+          <h3 style="color:var(--brand-blue); font-style:italic; margin-bottom: 15px;"><i class="fas fa-gamepad"></i>
+            Off-Track (Interests)</h3>
+          <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+            <div class="driver-info-pill"><i class="fas fa-utensils" style="color:var(--brand-pink)"></i>&nbsp; Cooking
+            </div>
+            <div class="driver-info-pill"><i class="fas fa-gamepad" style="color:var(--brand-blue)"></i>&nbsp; Video
+              Games</div>
+            <div class="driver-info-pill"><i class="fas fa-plane-departure" style="color:var(--brand-yellow)"></i>&nbsp;
+              Travel</div>
+          </div>
         </div>
       </div>
     </div>
