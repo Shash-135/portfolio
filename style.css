@@ -6,7 +6,9 @@
 :root {
   /* Linear-inspired Palette */
   --bg: #0f1115; /* Darker, richer charcoal */
+  --bg-rgb: 15 17 21;
   --surface: #1c1f26;
+  --surface-rgb: 28 31 38;
   --surface-hover: #23262e;
   --border: #2e3138;
   
@@ -25,7 +27,9 @@
 
 [data-theme="light"] {
   --bg: #ffffff;
+  --bg-rgb: 255 255 255;
   --surface: #f3f4f6;
+  --surface-rgb: 243 244 246;
   --surface-hover: #e5e7eb;
   --border: #e2e8f0;
   
@@ -126,7 +130,7 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -0.03em; line-height: 1.2; }
 .navbar {
   position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
   width: 90%; max-width: 1000px; height: 60px;
-  background: rgba(var(--bg), 0.85);
+  background: rgb(var(--bg-rgb) / 0.85);
   backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--border);
   border-radius: 100px; /* Pill Shape */
@@ -137,7 +141,7 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -0.03em; line-height: 1.2; }
 }
 .navbar:hover {
   border-color: var(--brand);
-  background: rgba(var(--bg), 0.95);
+  background: rgb(var(--bg-rgb) / 0.95);
 }
 .nav-container { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 0 25px; }
 .logo { font-weight: 700; font-size: 1.2rem; letter-spacing: -0.04em; color: var(--text-main); }
