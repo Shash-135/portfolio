@@ -95,7 +95,7 @@ const personalProjects = [
     ],
     icon: 'fa-droplet',
     tags: ['React', 'Node.js', 'React Native', 'MongoDB', 'JWT'],
-    href: 'https://github.com/Shash-135/JanSankalp',
+    href: 'https://github.com/Shash-135/JalSankalp',
     cta: 'GitHub',
     image: '/project-images/jalsankalp.png',
     imageLabel: 'JalSankalp project image',
