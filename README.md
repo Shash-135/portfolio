@@ -1,4 +1,4 @@
-# Shashank Talekar | Backend Engineer Portfolio
+# Shashank Talekar | Full-Stack Developer Portfolio
 
 This portfolio is now a React app built with Vite so it can be deployed to both Vercel and GitHub Pages.
 
